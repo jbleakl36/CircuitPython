@@ -1,0 +1,13 @@
+
+import time
+import board
+import touchio
+import adafruit_servokit
+
+touch_pad = board.D2  
+touch = touchio.TouchIn(touch_pad)
+
+while True:
+    if touch_D2.value:
+        print("Touched!")
+    myServo.angle = 180
