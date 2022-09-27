@@ -92,6 +92,7 @@ I had a few troubles, first off uploading the adafruit_motor was a challange. Ge
 
 ### Description & Code
 
+We were assinged to used two buttons and have thier inputs be shown on the LCD screen. One button adds or subtracts one, then the other determines wheither it is a postive or a negetive.
 ```python
 Code goes here
 
@@ -114,6 +115,7 @@ Pictures / Gifs of your work should go here.  You need to communicate what your 
 
 ### Description & Code
 
+We were assinged to use the distance sensor to successfully alter the color of an led light depending on what distance it read.
 ```python
 #type: ignore
 import simpleio
