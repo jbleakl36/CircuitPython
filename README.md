@@ -47,6 +47,7 @@ What went wrong / was challenging, how'd you figure it out, and what did you lea
 
 ### Description & Code
 
+We were assinged to get a 180° micro servo to slowly sweep back and forth between 0 and 180°.   
 ```python
 # SPDX-FileCopyrightText: 2018 Kattni Rembor for Adafruit Industries
 #
@@ -84,8 +85,7 @@ https://cvilleschools.instructure.com/courses/37129/assignments/493862/submissio
 
 ### Reflection
 
-
-
+I had a few troubles, first off uploading the adafruit_motor was a challange. Getting the hang of the code and how to implement the "for angle in range" feature was really hard. But in the end it worked out for me which is all I could ask for.
 
 ## CircuitPython_LCD
 
