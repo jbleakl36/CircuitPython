@@ -108,17 +108,53 @@ Pictures / Gifs of your work should go here.  You need to communicate what your 
 
 
 
-## NextAssignment
+## CircuitPython_Distance sensor
 
 ### Description & Code
 
 ```python
-Code goes here
+#type: ignore
+import simpleio
+import time
+import board
+import adafruit_hcsr04
+import neopixel
+sonar = adafruit_hcsr04.HCSR04(trigger_pin=board.D5, echo_pin=board.D4)
+dot = neopixel.NeoPixel(board.NEOPIXEL, 1)
+dot.brightness = 0.1
+red =0
+blue =0
+green =0
+ 
+while True:
+
+    try:
+        print((sonar.distance, red, green, blue))
+        
+        if sonar.distance < 5:
+            red= simpleio.map_range(sonar.distance, 0, 5, 255, 0)
+            blue= simpleio.map_range(sonar.distance, 0, 5, 0, 255)
+            green= 0
+            dot.fill((red, 0, blue))
+        elif sonar.distance < 20 and sonar.distance> 5:
+             red= 0
+             blue= simpleio.map_range(sonar.distance, 5, 20, 255, 0)
+             green= simpleio.map_range(sonar.distance, 5, 20, 0, 255)
+             dot.fill((0, green, blue))
+        else:
+             red=0
+             green= simpleio.map_range(sonar.distance, 20, 400, 255, 0)
+             blue= simpleio.map_range(sonar.distance, 20, 100, 0, 25)
+             dot.fill((0, green, blue))
+    except RuntimeError:
+        print("Retrying!")
+    time.sleep(0.1)
 
 ```
 
 ### Evidence
-
+https://cvilleschools.instructure.com/courses/37129/assignments/493861/submissions/4669
 ### Wiring
 
 ### Reflection
+This was the hardest assingment I have done yet. Learning how to properally use the map_range was insanely hard but once I figured it out I really got the hang of it. It was a challange to get a clear demonstration but I was able to do it in the end.
