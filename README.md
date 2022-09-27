@@ -81,7 +81,7 @@ while True:
 https://cvilleschools.instructure.com/courses/37129/assignments/493862/submissions/4669
 
 ### Wiring
-![sssservoo wiring](https://user-images.githubusercontent.com/112979207/192616324-de282856-b597-4414-8e24-c83be13c3695.png)
+
 
 ### Reflection
 
@@ -155,6 +155,6 @@ while True:
 ### Evidence
 https://cvilleschools.instructure.com/courses/37129/assignments/493861/submissions/4669
 ### Wiring
-
+![sssservoo wiring](https://user-images.githubusercontent.com/112979207/192616324-de282856-b597-4414-8e24-c83be13c3695.png)
 ### Reflection
 This was the hardest assingment I have done yet. Learning how to properally use the map_range was insanely hard but once I figured it out I really got the hang of it. It was a challange to get a clear demonstration but I was able to do it in the end.
