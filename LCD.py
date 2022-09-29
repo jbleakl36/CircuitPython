@@ -25,7 +25,7 @@ prev_state = True
 while True:
  
     curr_state= btn2.value
-    cur_state = btn1.value
+    
     
     if cur_state != prev_state:
         if not cur_state:
