@@ -1,28 +1,165 @@
-# CPyProjectTemplate
-Put a description for your project here!
-This repo is a template VS code project for CircuitPython projects that automatically uploads your code to the board when you press F5. Requires F5Anything extension.
-## Use
-### Every new project:
-1. Make a GitHub account if you don't have one with your normal school credentials and sign into it.
-2. Click the big green Use This Template button at the top of this page.
-3. Name the new repository something appropriate to the purpose of your project (Your first one should probably be named `CircuitPython`).
-4. Hit "Create repository from template." (The default settings should be fine.)
-5. Open VS Code on your machine. Click Clone Repository.
-6. Paste in the link to the new repository you've just created from the template and hit enter.
-7. For the location, select the "STUDENT" drive if you have it or the document folder if you don't.
-8. Hit "Open Cloned Directory."
-9. Install the reccomended extensions when you get that popup in the lower right corner.
-### To commit from VS Code:
-1. Go to the little branch icon in the left bar of VS Code.
-2. Click the + icon next  to the files you want to commit.
-3. Write a message that descibes your changes in the "Message" box and hit commit.
-4. If you get an error about user.name and user.email, see the next section.
-5. Click the "Sync changes" button.
-### If you get an error about user.name and user.email
-1. Open Git Bash from the Windows Search Bar.
-2. FIlling in your actual information, run the following commands one line at a time. The paste shortcut is `Shift+Insert` or you can right click then hit paste. Spelling must match exactly:
+# CircuitPython
+This repository will actually serve as a aid to help you get started with your own template.  You should copy the raw form of this readme into your own, and use this template to write your own.  If you want to draw inspiration from other classmates, feel free to check [this directory of all students!](https://github.com/chssigma/Class_Accounts).
+## Table of Contents
+* [Table of Contents](#TableOfContents)
+* [Hello_CircuitPython](#Hello_CircuitPython)
+* [CircuitPython_Servo](#CircuitPython_Servo)
+* [CircuitPython_LCD](#CircuitPython_LCD)
+* [NextAssignmentGoesHere](#NextAssignment)
+---
+
+## Hello_CircuitPython
+
+### Description & Code
+Description goes here
+
+Here's how you make code look like code:
+
+```python
+Code goes here
+
 ```
-git config --global user.name YOURUSERNAME
-git config --global user.email YOURSCHOOLEMAIL
+
+
+### Evidence
+
+
+![spinningMetro_Optimized](https://user-images.githubusercontent.com/54641488/192549584-18285130-2e3b-4631-8005-0792c2942f73.gif)
+
+
+And here is how you should give image credit to someone, if you use their work:
+
+Image credit goes to [Rick A](https://www.youtube.com/watch?v=dQw4w9WgXcQ&scrlybrkr=8931d0bc)
+
+
+
+### Wiring
+Make an account with your google ID at [tinkercad.com](https://www.tinkercad.com/learn/circuits), and use "TinkerCad Circuits to make a wiring diagram."  It's really easy!  
+Then post an image here.   [here's a quick tutorial for all markdown code, like making links](https://guides.github.com/features/mastering-markdown/)
+
+### Reflection
+What went wrong / was challenging, how'd you figure it out, and what did you learn from that experience?  Your ultimate goal for the reflection is to pass on knowledge that will make this assignment better or easier for the next person.
+
+
+
+
+## CircuitPython_Servo
+
+### Description & Code
+
+We were assinged to get a 180° micro servo to slowly sweep back and forth between 0 and 180°.   
+```python
+# SPDX-FileCopyrightText: 2018 Kattni Rembor for Adafruit Industries
+#
+# SPDX-License-Identifier: MIT
+
+"""CircuitPython Essentials Servo standard servo example"""
+import time
+import board
+import pwmio
+from adafruit_motor import servo
+# create a PWMOut object on Pin A2.
+pwm = pwmio.PWMOut(board.D3, duty_cycle=2 ** 15, frequency=50)
+
+# Create a servo object, my_servo.
+my_servo = servo.Servo(pwm)
+
+while True:
+    for angle in range(0, 180, 100):  # 0 - 180 degrees, 100 degrees at a time.
+        my_servo.angle = angle
+        time.sleep(2)
+        print("Go forth") # added for the requirement
+    for angle in range(180, 0, -100): # 180 - 0 degrees, 100 degrees at a time.
+        my_servo.angle = angle
+        time.sleep(2)
+        print("Steer back") #Same here
+
 ```
-3. Return to step 3 of the previous section.
+
+### Evidence
+
+https://cvilleschools.instructure.com/courses/37129/assignments/493862/submissions/4669
+
+### Wiring
+![Servo!!!!!](https://user-images.githubusercontent.com/112979207/192621243-145f76de-b0d5-4bc2-b9d3-eab04ff97999.png)
+
+
+### Reflection
+
+I had a few troubles, first off uploading the adafruit_motor was a challange. Getting the hang of the code and how to implement the "for angle in range" feature was really hard. But in the end it worked out for me which is all I could ask for.
+
+## CircuitPython_LCD
+
+### Description & Code
+
+We were assinged to used two buttons and have thier inputs be shown on the LCD screen. One button adds or subtracts one, then the other determines wheither it is a postive or a negetive.
+```python
+Code goes here
+
+```
+
+### Evidence
+
+Pictures / Gifs of your work should go here.  You need to communicate what your thing does.
+
+### Wiring
+![Real LCD!!!!!](https://user-images.githubusercontent.com/112979207/193122912-42deb280-2e60-49e8-9e4a-d782b3baa57a.png)
+
+
+### Reflection
+
+
+
+
+
+## CircuitPython_Distance sensor
+
+### Description & Code
+
+We were assinged to use the distance sensor to successfully alter the color of an led light depending on what distance it read.
+```python
+#type: ignore
+import simpleio
+import time
+import board
+import adafruit_hcsr04
+import neopixel
+sonar = adafruit_hcsr04.HCSR04(trigger_pin=board.D5, echo_pin=board.D4)
+dot = neopixel.NeoPixel(board.NEOPIXEL, 1)
+dot.brightness = 0.1
+red =0
+blue =0
+green =0
+ 
+while True:
+
+    try:
+        print((sonar.distance, red, green, blue))
+        
+        if sonar.distance < 5:
+            red= simpleio.map_range(sonar.distance, 0, 5, 255, 0)
+            blue= simpleio.map_range(sonar.distance, 0, 5, 0, 255)
+            green= 0
+            dot.fill((red, 0, blue))
+        elif sonar.distance < 20 and sonar.distance> 5:
+             red= 0
+             blue= simpleio.map_range(sonar.distance, 5, 20, 255, 0)
+             green= simpleio.map_range(sonar.distance, 5, 20, 0, 255)
+             dot.fill((0, green, blue))
+        else:
+             red=0
+             green= simpleio.map_range(sonar.distance, 20, 400, 255, 0)
+             blue= simpleio.map_range(sonar.distance, 20, 100, 0, 25)
+             dot.fill((0, green, blue))
+    except RuntimeError:
+        print("Retrying!")
+    time.sleep(0.1)
+
+```
+
+### Evidence
+https://cvilleschools.instructure.com/courses/37129/assignments/493861/submissions/4669
+### Wiring
+![sssservoo wiring](https://user-images.githubusercontent.com/112979207/192616324-de282856-b597-4414-8e24-c83be13c3695.png)
+### Reflection
+This was the hardest assingment I have done yet. Learning how to properally use the map_range was insanely hard but once I figured it out I really got the hang of it. It was a challange to get a clear demonstration but I was able to do it in the end.
