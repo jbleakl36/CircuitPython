@@ -103,7 +103,8 @@ Code goes here
 Pictures / Gifs of your work should go here.  You need to communicate what your thing does.
 
 ### Wiring
-![LCD](https://user-images.githubusercontent.com/112979207/192620266-37959d13-ab13-457d-8a25-941b675d25e3.png)
+![Real LCD!!!!!](https://user-images.githubusercontent.com/112979207/193122912-42deb280-2e60-49e8-9e4a-d782b3baa57a.png)
+
 
 ### Reflection
 
