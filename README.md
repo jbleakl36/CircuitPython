@@ -94,66 +94,63 @@ I had a few troubles, first off uploading the adafruit_motor was a challange. Ge
 
 We were assinged to used two buttons and have thier inputs be shown on the LCD screen. One button adds or subtracts one, then the other determines wheither it is a postive or a negetive.
 ```python
+
+#Elias Garcia
+#When a button is presses it increses or decreases the count based on the position of a switch
+#Code from Grant Gastinger
+ 
 import board
-import time
 from lcd.lcd import LCD
 from lcd.i2c_pcf8574_interface import I2CPCF8574Interface
+import time
 from digitalio import DigitalInOut, Direction, Pull
 
 # get and i2c object
 i2c = board.I2C()
-btn = DigitalInOut(board.D3)
-btn2 = DigitalInOut(board.D2)
+btn = DigitalInOut(board.D2)
 btn.direction = Direction.INPUT
 btn.pull = Pull.UP
+clickCount = 0
+
+btn2 = DigitalInOut(board.D3)
 btn2.direction = Direction.INPUT
 btn2.pull = Pull.UP
-# some LCDs are 0x3f... some are 0x27.
+# some LCDs are 0x3f... some are 0x27...
 lcd = LCD(I2CPCF8574Interface(i2c, 0x3f), num_rows=2, num_cols=16)
-cur_state = True
-prev_state = True
-cur_state2 = True
-prev_state2 = True
-cur_state3 = True
-prev_state3 = True
-buttonPress = 0
-buttonToggle = True
 
+lcd.print("elias")
+print("son, i am disapoint.")
 while True:
-        cur_state3 = btn2.value
-        prev_state3 = cur_state3
-        if cur_state3 == prev_state3:
-            cur_state = btn.value
-            if cur_state != prev_state:
-                if not cur_state:
-                    buttonPress = buttonPress + 1
-                    lcd.clear()
-                    lcd.set_cursor_pos(0,0)
-                    lcd.print(str(buttonPress))
-                else:
-                    lcd.clear()
-                    lcd.set_cursor_pos(0,0)
-                    lcd.print(str(buttonPress))
-            prev_state = cur_state
+    if not btn2.value:
+        if not btn.value:
+            lcd.clear()
+            lcd.set_cursor_pos(0, 0)
+            lcd.print("Click Count:")
+            lcd.set_cursor_pos(0,13)
+            clickCount = clickCount + 1
+            lcd.print(str(clickCount))
         else:
-            cur_state2 = btn.value
-            if cur_state2 != prev_state2:
-                if not cur_state2:
-                    buttonPress = buttonPress - 1
-                    lcd.clear()
-                    lcd.set_cursor_pos(0,0)
-                    lcd.print(str(buttonPress))
-                else:
-                    lcd.clear()
-                    lcd.set_cursor_pos(0,0)
-                    lcd.print(str(buttonPress))
-            prev_state2 = cur_state2
+            pass
+    else:
+        if not btn.value:
+            lcd.clear()
+            lcd.set_cursor_pos(0, 0)
+            lcd.print("Click Count:")
+            lcd.set_cursor_pos(0,13)
+            clickCount = clickCount - 1
+            lcd.print(str(clickCount))
+        else:
+            pass
+    print("btn1",btn.value,"   btn2",btn2.value)
 
+    time.sleep(0.1) # sleep for debounce
 ```
 
 ### Evidence
+Preview attachment IMG_0880.MOV
 
-Pictures / Gifs of your work should go here.  You need to communicate what your thing does.
+IMG_0880.MOV
+3.5 MB
 
 ### Wiring
 ![Real LCD!!!!!](https://user-images.githubusercontent.com/112979207/193122912-42deb280-2e60-49e8-9e4a-d782b3baa57a.png)
@@ -161,7 +158,7 @@ Pictures / Gifs of your work should go here.  You need to communicate what your 
 
 ### Reflection
 
-
+In all this assignment was brutally hard. My LCD short curcuited and it took me weeks to finish. Adivce: Make sure your wiring is good before you go or else your computer will put you on safe mode.
 
 
 
