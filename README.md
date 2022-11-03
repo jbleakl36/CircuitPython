@@ -214,6 +214,40 @@ https://cvilleschools.instructure.com/courses/37129/assignments/493861/submissio
 ### Reflection
 This was the hardest assingment I have done yet. Learning how to properally use the map_range was insanely hard but once I figured it out I really got the hang of it. It was a challange to get a clear demonstration but I was able to do it in the end.
 
+### Motor Control
+
+### Description & Code
+We were tasked with wiring a Dc motor and using a potentiometer to control it's rate
+
+```python
+import time
+import board
+from analogio import AnalogIn,AnalogOut
+from digitalio import DigitalInOut, Direction, Pull
+import simpleio
+from adafruit_motor import motor 
+
+motorpin = AnalogOut(board.A1)
+potentiometer = AnalogIn(board.A0)  # potentiometer connected to A1, power & ground
+
+while True:
+
+    print((int(simpleio.map_range(potentiometer.value,0,65535,0,255))))     
+    time.sleep(0.25) 
+    motorpin.value = potentiometer.value
+```
+
+### Evidence
 
 
+https://user-images.githubusercontent.com/112979207/199818663-7a93eebd-2407-40db-b45e-18ec1f43f4ca.MOV
 
+### Wiring 
+![Yay](https://user-images.githubusercontent.com/112979207/199820945-bab03dd0-8159-46b3-ae11-1b1a71e2f276.png)
+
+
+### Reflection
+This assingment was frustrating. My computer didn't let me use my COM making the serial monitor useless 
+to me. My DC motor was very strong and gave me trouble when I had to evaluate the speed. Overall
+it wasn't fun (especially the coding) but in the end, I have finsihed and I don't have to worry about
+this anymore (I hope I am not acidentally foreshadowing)
