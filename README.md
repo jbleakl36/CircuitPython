@@ -254,6 +254,12 @@ this anymore (I hope I am not acidentally foreshadowing)
 
 ### Temp
 
+
+### Description & Code
+
+We were taskes with using the tmp 36 and LCD screen to properally convey the change in temperature.
+
+```python
 import board
 import analogio
 import time
@@ -263,17 +269,17 @@ from digitalio import DigitalInOut, Direction, Pull
 TMP36_PIN = board.A1  # Analog input connected to TMP36 output.
 i2c = board.I2C()
 
-# Function to simplify the math of reading the temperature.
+Function to simplify the math of reading the temperature.
 lcd = LCD(I2CPCF8574Interface(i2c, 0x3f), num_rows=2, num_cols=16)
 def tmp36_temperature_C(analogin):
     millivolts = analogin.value * (analogin.reference_voltage * 1000 / 65535)
     return (millivolts - 500) / 10
 
 
-# Create  analog input.
+ Create  analog input.
 tmp36 = analogio.AnalogIn(board.A1)
 
-# Loop forever.
+Loop forever.
 while True:
     # Read the temperature in Celsius.
     temp_C = tmp36_temperature_C(tmp36)
@@ -291,3 +297,16 @@ while True:
         lcd.set_cursor_pos(0, 12)
         lcd.print("Cold")
     time.sleep(.5)
+```
+
+
+### Evidence
+https://user-images.githubusercontent.com/112979207/225112713-0ce9ac49-74fd-44bd-8d0d-4298f7ec97ba.mp4
+
+### Wiring
+![Yo](https://user-images.githubusercontent.com/112979207/225115168-0909b9d9-194b-4c3a-971d-4f98e474b818.png)
+
+
+### Reflection
+Initially hard but evetually understood the way an LCD screen worked again. My t 36 was in the 19's temprature wise but besides that
+there wasn't much issue.
