@@ -303,13 +303,20 @@ while True:
 ### Evidence
 https://user-images.githubusercontent.com/112979207/225112713-0ce9ac49-74fd-44bd-8d0d-4298f7ec97ba.mp4
 
+### Wiring
+![Yo](https://user-images.githubusercontent.com/112979207/225115168-0909b9d9-194b-4c3a-971d-4f98e474b818.png)
+
+
+### Reflection
+Initially hard but evetually understood the way an LCD screen worked again. My t 36 was in the 19's temprature wise but besides that
+there wasn't much issue.
 ### Rotary encoder
 
 ### Description and code
 We were tasked with using a rotary encoder, lcd screen, and 3 leds to create a menu baed traffic control
 
-'''python
-# Rotary Encodare light thingksf;ja
+```python
+Rotary Encodare light thingksf;ja
 
 import time
 
@@ -440,12 +447,6 @@ while True:
         Buttonyep = 1
 
     last_position = position
-'''
-
-### Wiring
-![Yo](https://user-images.githubusercontent.com/112979207/225115168-0909b9d9-194b-4c3a-971d-4f98e474b818.png)
+```
 
 
-### Reflection
-Initially hard but evetually understood the way an LCD screen worked again. My t 36 was in the 19's temprature wise but besides that
-there wasn't much issue.
