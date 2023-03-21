@@ -448,5 +448,6 @@ while True:
 
     last_position = position
 ```
-
+### Reflection 
+Overall it was relatively smooth. The major problems I had were the fact that Github was down and the fact that I didn't have rotaryio imported for some reason.
 
