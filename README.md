@@ -455,3 +455,41 @@ while True:
 ### Reflection 
 Overall it was relatively smooth. The major problems I had were the fact that Github was down and the fact that I didn't have rotaryio imported for some reason.
 
+### Photointerupters
+
+### Descrtiption and code
+We were tasked with using a photointerupter to keep track of how many times it has been interrupted.
+
+```python
+import time
+import digitalio
+import board
+
+photoI = digitalio.DigitalInOut(board.D7)
+photoI.direction = digitalio.Direction.INPUT
+photoI.pull = digitalio.Pull.UP
+
+last_photoI = True
+last_update = -4
+
+photoICrosses = 0
+
+while True:
+    if time.monotonic()-last_update > 4:
+        print(f"The number of crosses is {photoICrosses}")
+        last_update = time.monotonic()
+    
+    if last_photoI != photoI.value and not photoI.value:
+        photoICrosses += 1
+    last_photoI = photoI.value
+```
+
+### Evidence
+
+![226713736-399d0f22-aff7-4dd4-8ebb-a26b9d3674bc](https://user-images.githubusercontent.com/112979207/228343671-c46b8f40-732a-407d-82b8-e0a1ecd68265.gif)
+
+### Wiring 
+![68747470733a2f2f726976717565732e6769746875622e696f2f646f63732f70686f746f696e74636972637569742e706e67](https://user-images.githubusercontent.com/112979207/228343647-98e76c17-ba22-464a-a1ec-a0ea43d0b802.png)
+
+### Reflection
+This project was reletively straightforward, wiring was simple coding was simple it wasn't too much to handle as some other assingments have. 
