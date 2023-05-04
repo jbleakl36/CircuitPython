@@ -257,7 +257,8 @@ this anymore (I hope I am not acidentally foreshadowing)
 
 ### Description & Code
 
-We were taskes with using the tmp 36 and LCD screen to properally convey the change in temperature.
+We were taskes with using the tmp 36 and LCD screen to properally convey the change in temperature. Furthermore we were tasked to print
+a message for if it's too hot and another message for if it's too cold. Learning goal: to fully understand how to weld the tempeture sensor.
 
 ```python
 import board
@@ -308,12 +309,14 @@ https://user-images.githubusercontent.com/112979207/225112713-0ce9ac49-74fd-44bd
 
 
 ### Reflection
-Initially hard but evetually understood the way an LCD screen worked again. My t 36 was in the 19's temprature wise but besides that
+Initially hard but evetually understood the way an LCD screen worked again. I learned that even if things are going smoothly that there will most likely be set backs and that is frustrating but it is part of the challenge of coding. My t 36 was in the 19's temprature wise but besides that
 there wasn't much issue.
 ### Rotary encoder
 
 ### Description and code
-We were tasked with using a rotary encoder, lcd screen, and 3 leds to create a menu baed traffic control
+We were tasked with using a rotary encoder, lcd screen, and 3 leds to create a menu based traffic control. We had to utilize the 
+three pins of the rotary encoder to have it working properly. Learning goal: To understand how to use the rotary encoder and to
+learn four new programming concepts those being Constants, String objects, Arrays, and the switch case statement.
 
 ```python
 Rotary Encodare light thingksf;ja
@@ -453,12 +456,14 @@ while True:
 ![226446966-8a585aef-7c21-480a-8ca3-219ae95f4cef](https://user-images.githubusercontent.com/112979207/226720029-20b73fc3-1464-41d9-80bd-444d2c4761ca.gif)
 
 ### Reflection 
-Overall it was relatively smooth. The major problems I had were the fact that Github was down and the fact that I didn't have rotaryio imported for some reason.
+It was initially tricky, there were so many concepts indroduced at once I didn't even know where to begin. But as I began to go over the designated slideshow it became less intimidating. The major problems I had were the fact that Github was down and the fact that I didn't have rotaryio imported for some reason.
 
 ### Photointerupters
 
 ### Descrtiption and code
-We were tasked with using a photointerupter to keep track of how many times it has been interrupted.
+We were tasked with using a photointerupter to keep track of how many times it has been interrupted. Furthermore we needed to make sure it was wired properly
+as if we didn't we would fry the photointerupter. Learning goal: To properly understand how the photointerupter works and to learn how to create a coding sequence 
+without using the sleep command but instead using the time.monocromatic command instead.
 
 ```python
 import time
@@ -492,4 +497,4 @@ while True:
 ![68747470733a2f2f726976717565732e6769746875622e696f2f646f63732f70686f746f696e74636972637569742e706e67](https://user-images.githubusercontent.com/112979207/228343647-98e76c17-ba22-464a-a1ec-a0ea43d0b802.png)
 
 ### Reflection
-This project was reletively straightforward, wiring was simple coding was simple it wasn't too much to handle as some other assingments have. 
+I am thankful that the wiring was broken down for us because if not, I would have totally fryed a photointerupter. Besides the wiring learning the time.monocromatic was a bit tricky but after some research I eventually learned it's ways. It was exciting seeing it work for the first time as other assingments have taken much longer than the time I took to finish this one.
